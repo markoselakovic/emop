@@ -1,3 +1,4 @@
+import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
@@ -26,9 +27,14 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  final databaseReference = FirebaseDatabase.instance.reference();
   int _counter = 0;
 
   void _incrementCounter() {
+    databaseReference.child("1").set({
+      'title': 'Mastering EJB',
+      'description': 'Programming Guide for J2EE'
+    });
     setState(() {
       _counter++;
     });
