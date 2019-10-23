@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "169019126351",
+    "firebase_url": "https://emop-2020-66b58.firebaseio.com",
+    "project_id": "emop-2020-66b58",
+    "storage_bucket": "emop-2020-66b58.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:169019126351:android:8c1acdee0288436b9f303a",
+        "android_client_info": {
+          "package_name": "com.consultingbylibra.emop"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "169019126351-n8sbdl1rbpi5fsjhc6dcflc8o4tc2e4i.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDxx2TYxkhFvVVkSrI2ajeInpejrOAhD0Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "169019126351-n8sbdl1rbpi5fsjhc6dcflc8o4tc2e4i.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "169019126351-ojs5fn4bg9a14oidppipcegbtk8t77dt.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.consultingbylibra.emop"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
