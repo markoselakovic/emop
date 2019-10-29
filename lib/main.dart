@@ -1,5 +1,4 @@
 import 'package:emop/screens/postersPage.dart';
-import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'screens/homePage.dart';
@@ -36,12 +35,12 @@ class _MyHomePageState extends State<MyHomePage> {
   List<Widget> _widgetOptions = <Widget>[
     HomePage(),
     Text(
-      'Index 1: Business',
+      'Index 2: Agenda',
       style: optionStyle,
     ),
     PostersPage(),
     Text(
-      'Index 2: School',
+      'Index 4: Social',
       style: optionStyle,
     ),
   ];
@@ -49,18 +48,6 @@ class _MyHomePageState extends State<MyHomePage> {
   void _onItemTapped(int index) {
     setState(() {
       _selectedIndex = index;
-    });
-  }
-  final databaseReference = FirebaseDatabase.instance.reference();
-  int _counter = 0;
-
-  void _incrementCounter() {
-    databaseReference.child("1").set({
-      'title': 'Mastering EJB',
-      'description': 'Programming Guide for J2EE'
-    });
-    setState(() {
-      _counter++;
     });
   }
 
