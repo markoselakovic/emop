@@ -1,3 +1,4 @@
+import 'package:emop/screens/AgendaPage.dart';
 import 'package:emop/screens/postersPage.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -34,10 +35,7 @@ class _MyHomePageState extends State<MyHomePage> {
   TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
   List<Widget> _widgetOptions = <Widget>[
     HomePage(),
-    Text(
-      'Index 2: Agenda',
-      style: optionStyle,
-    ),
+    AgendaPage(),
     PostersPage(),
     Text(
       'Index 4: Social',
