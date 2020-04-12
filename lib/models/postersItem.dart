@@ -1,3 +1,5 @@
+import 'package:firebase_database/firebase_database.dart';
+
 class PostersItem {
 
   String id;
@@ -20,9 +22,19 @@ class PostersItem {
     title = map["title"];
   }
 
+  PostersItem.fromSnapshot(DataSnapshot snapshot) :
+        id = snapshot.key,
+        date = snapshot.value["date"],
+        day = snapshot.value["day"],
+        timeZone = snapshot.value['timeZone'],
+        time = snapshot.value['time'],
+        order = snapshot.value['order'],
+        title = snapshot.value['title'];
+
   Map<String, dynamic> toJson() {
     return <String, dynamic>{
       'date': date,
+      'day': day,
       'timeZone': timeZone,
       'time': time,
       'order': order,

@@ -10,7 +10,7 @@ class HomePage extends StatelessWidget {
     return SingleChildScrollView(
       child: Column(
         children: <Widget>[
-          Image.asset('assets/samsung.png'), //todo change  this to appropriate logo
+          Image.asset('assets/logo.jpeg'),
           Image.asset('assets/sava-river.jpg'),
           Align(
             alignment: Alignment.centerRight,

@@ -25,6 +25,7 @@ dependencies:
   cupertino_icons: ^0.1.2
   firebase_core: ^0.4.0
   firebase_database: 3.0.7
+  maps_launcher: ^1.2.0
 
 dev_dependencies:
   flutter_test:

@@ -1,6 +1,7 @@
 import 'package:emop/models/postersItem.dart';
 import 'package:emop/screens/searchablePage.dart';
 import 'package:emop/widgets/postersListItem.dart';
+import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 
 class PostersPage extends StatefulWidget {
@@ -47,4 +48,23 @@ class _PostersPageState extends SearchablePageState<PostersPage> {
               ));
         });
   }
+
+//@override
+//  Widget getListView() {
+//    // TODO: implement getListView
+//    return RaisedButton(
+//      onPressed: () {
+//        FirebaseDatabase.instance.reference().child("posters").push().set(i1.toJson());
+//      },
+//      color: Colors.lightGreen[600],
+//      child: Container(
+//        padding: EdgeInsets.all(5.0),
+//        child: Text(
+//          'update',
+//          textAlign: TextAlign.center,
+//          style: TextStyle(fontSize: 15, color: Colors.white),
+//        ),
+//      ),
+//    );
+//  }
 }
