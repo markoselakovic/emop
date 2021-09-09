@@ -38,7 +38,7 @@ class VenueInformation extends StatelessWidget {
       child: Column(
         children: <Widget>[
           Text(
-            "EMOP 2020 will take place in the Crowne Plaza Belgrade, ideally located in the central business district of New Belgrade. "
+            "EMOP 2021 will take place in the Crowne Plaza Belgrade, ideally located in the central business district of New Belgrade. "
             "Only 13 km from the International Belgrade Airport Nikola Tesla and only 5 minute drive away from the city centre. With 12 distinct function rooms,"
             " a total of 1.300 sqm/ 14.000 sqft flexible meeting space, the hotel has the largest event capacity in Serbia for important corporate functions or memorable social events."
             "\n\nSpecial needs: Wheelchair accessible rooms available and wheelchair accessible parking spaces, lift access to all floors including conference rooms floor, lift near accessible rooms.",

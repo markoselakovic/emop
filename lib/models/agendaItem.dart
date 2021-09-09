@@ -1,44 +1,44 @@
 import 'package:firebase_database/firebase_database.dart';
 
-class PostersItem {
+class AgendaItem {
 
   String id;
   String day;
   String date;
-  String timeZone;
   String time;
-  int order;
+  String order;
 
   String title;
+  String organizer;
 
-  PostersItem(this.id,this.day, this.date, this.timeZone, this.time, this.order, this.title);
+  AgendaItem(this.id,this.day, this.date, this.time, this.order, this.title, this.organizer);
 
-  PostersItem.fromMap(String key, Map map) {
+  AgendaItem.fromMap(String key, Map map) {
     id = key;
     date = map["date"];
-    timeZone = map["timeZone"];
     time = map["time"];
     order = map["order"];
     title = map["title"];
+    organizer = map["organizer"];
   }
 
-  PostersItem.fromSnapshot(DataSnapshot snapshot) :
+  AgendaItem.fromSnapshot(DataSnapshot snapshot) :
         id = snapshot.key,
         date = snapshot.value["date"],
         day = snapshot.value["day"],
-        timeZone = snapshot.value['timeZone'],
         time = snapshot.value['time'],
         order = snapshot.value['order'],
-        title = snapshot.value['title'];
+        title = snapshot.value['title'],
+        organizer = snapshot.value["organizer"];
 
   Map<String, dynamic> toJson() {
     return <String, dynamic>{
       'date': date,
       'day': day,
-      'timeZone': timeZone,
       'time': time,
       'order': order,
-      'title': title
+      'title': title,
+      'organizer' : organizer
     };
   }
 }
