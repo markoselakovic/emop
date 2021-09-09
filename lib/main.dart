@@ -27,7 +27,7 @@ class MyApp extends StatelessWidget {
 
         primarySwatch: Colors.blue,
       ),
-      home: MyHomePage(title: 'EMOP 2020 | Belgrade'),
+      home: MyHomePage(title: 'EMOP 2021 | Belgrade'),
     );
   }
 }
@@ -54,7 +54,7 @@ class _MyHomePageState extends State<MyHomePage> {
   List<Widget> _widgetOptions = <Widget>[
     HomePage(),
     AgendaPage(),
-    PostersPage(),
+    // PostersPage(),
     SocialPage()
   ];
 
@@ -76,7 +76,7 @@ class _MyHomePageState extends State<MyHomePage> {
             padding: EdgeInsets.zero,
             children: <Widget>[
               DrawerHeader(
-                child: Image.asset('assets/logo.jpeg'),
+                child: Image.asset('assets/EMOPLogo.png'),
                 decoration: BoxDecoration(
                   color: Colors.lightGreen[600],
                 ),
@@ -103,21 +103,21 @@ class _MyHomePageState extends State<MyHomePage> {
                   // ...
                 },
               ),
-              ListTile(
-                title: Text(POSTERS),
-                leading: Icon(Icons.assignment),
-                onTap: () {
-                  _selectedIndex = 2;
-                  _onItemTapped(_selectedIndex);
-                  Navigator.pop(context);
-                  // ...
-                },
-              ),
+              // ListTile(
+              //   title: Text(POSTERS),
+              //   leading: Icon(Icons.assignment),
+              //   onTap: () {
+              //     _selectedIndex = 2;
+              //     _onItemTapped(_selectedIndex);
+              //     Navigator.pop(context);
+              //     // ...
+              //   },
+              // ),
               ListTile(
                 title: Text(SOCIAL),
                 leading: Icon(CupertinoIcons.conversation_bubble),
                 onTap: () {
-                  _selectedIndex = 3;
+                  _selectedIndex = 2;//todo put 3 when posters are back
                   _onItemTapped(_selectedIndex);
                   Navigator.pop(context);
                   // ...
@@ -127,7 +127,7 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
         ),
         appBar: AppBar(
-          title: const Text('EMOP 2020 | Belgrade'),
+          title: const Text('EMOP 2021 | Belgrade'),
           backgroundColor: Colors.lightGreen[600],
         ),
         body: Center(
@@ -143,10 +143,10 @@ class _MyHomePageState extends State<MyHomePage> {
               icon: Icon(Icons.format_list_bulleted),
               title: Text(AGENDA),
             ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.assignment),
-              title: Text(POSTERS),
-            ),
+            // BottomNavigationBarItem(
+            //   icon: Icon(Icons.assignment),
+            //   title: Text(POSTERS),
+            // ),
             BottomNavigationBarItem(
               icon: Icon(CupertinoIcons.conversation_bubble),
               title: Text(SOCIAL),

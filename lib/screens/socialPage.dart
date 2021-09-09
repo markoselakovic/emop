@@ -53,32 +53,8 @@ class SocialPage extends StatelessWidget {
                     Expanded(
                       child: Padding(
                         padding: const EdgeInsets.only( bottom: 2.0, top: 10),
-                        child: Text("Wednesday / August 26th", textAlign: TextAlign.center, style: TextStyle(fontSize: 15, fontFamily: "SinkinSans")),
+                        child: Text("Wednesday / October 13th", textAlign: TextAlign.center, style: TextStyle(fontSize: 15, fontFamily: "SinkinSans")),
                       ),
-                    ),
-                  ],
-                ),
-                Row(
-                  children: <Widget>[
-                    Expanded(
-                      child: Container(
-                        color: color,
-                        child: Container(
-                          padding: const EdgeInsets.only( bottom: 2.0, top: 3.0),
-                          child: Text("White Palace Gala Dinner",
-                              textAlign: TextAlign.center,
-                              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15, fontFamily: "SinkinSans")),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-                Row(
-                  children: <Widget>[
-                    Expanded(
-                      child: Container(
-                          padding: const EdgeInsets.only( bottom: 2.0, top:3.0),
-                          child: Text("Thursday / August 27th",textAlign: TextAlign.center, style: TextStyle(fontSize: 15, fontFamily: "SinkinSans"))),
                     ),
                   ],
                 ),
@@ -101,8 +77,8 @@ class SocialPage extends StatelessWidget {
                   children: <Widget>[
                     Expanded(
                       child: Container(
-                          padding: const EdgeInsets.only( bottom: 2.0, top: 3.0),
-                          child: Text("Friday / August 28th", textAlign: TextAlign.center, style: TextStyle(fontSize: 15, fontFamily: "SinkinSans"))),
+                          padding: const EdgeInsets.only( bottom: 2.0, top:3.0),
+                          child: Text("Thursday / October 14th",textAlign: TextAlign.center, style: TextStyle(fontSize: 15, fontFamily: "SinkinSans"))),
                     ),
                   ],
                 ),
@@ -113,7 +89,31 @@ class SocialPage extends StatelessWidget {
                         color: color,
                         child: Container(
                           padding: const EdgeInsets.only( bottom: 2.0, top: 3.0),
-                          child: Text("Belgrade Cruise and Dinner",
+                          child: Text("Belgrade Cruise & Dinner",
+                              textAlign: TextAlign.center,
+                              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15, fontFamily: "SinkinSans")),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+                Row(
+                  children: <Widget>[
+                    Expanded(
+                      child: Container(
+                          padding: const EdgeInsets.only( bottom: 2.0, top: 3.0),
+                          child: Text("Friday / October 15th", textAlign: TextAlign.center, style: TextStyle(fontSize: 15, fontFamily: "SinkinSans"))),
+                    ),
+                  ],
+                ),
+                Row(
+                  children: <Widget>[
+                    Expanded(
+                      child: Container(
+                        color: color,
+                        child: Container(
+                          padding: const EdgeInsets.only( bottom: 2.0, top: 3.0),
+                          child: Text("Farewell Cocktail Party",
                               textAlign: TextAlign.center,
                               style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15, fontFamily: "SinkinSans")),
                         ),
@@ -158,26 +158,25 @@ class SocialPage extends StatelessWidget {
                             ],
                           ),
                         ),
-                        getDescriptionRowText("Sunday August 23rd or Monday August 24th", fontSize: 12.0, italic: true),
+                        getDescriptionRowText("Monday October 11th", fontSize: 12.0, italic: true),
                         getDescriptionRowText("Vojvodina Tour"),
-                        getDescriptionRowText("Royal Tour - Topola & Oplenac"),
-                        getDescriptionRowText("Cruising the Iron Gate"),
-                        getDescriptionRowText("Down and around the Danube"),
-                        getDescriptionRowText("Saturday, August 29th", fontSize: 13.0, italic: true),
-                        getDescriptionRowText("Winery tour - oldest wine clear in Serbia"),
-                        Padding(
-                          padding: const EdgeInsets.only(bottom: 2.0, top: 15),
-                          child: Row(
-                            children: <Widget>[
-                              Spacer(),
-                              Text("2 DAY TOURS:",
-                                  textAlign: TextAlign.right,
-                                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18, fontFamily: "SinkinSans")),
-                            ],
-                          ),
-                        ),
-                        getDescriptionRowText("Sunday August 23rd & Monday August 24th", fontSize: 12.0, italic: true),
-                        getDescriptionRowText("Magical Easern Serbia"),
+                        getDescriptionRowText("Tuesday October 12th", fontSize: 12.0, italic: true),
+                        getDescriptionRowText("Explore Belgrade"),
+                        getDescriptionRowText("Sunday October 17th", fontSize: 12.0, italic: true),
+                        getDescriptionRowText("The Ilic-Nijemčevic Winery"),
+                        // Padding(
+                        //   padding: const EdgeInsets.only(bottom: 2.0, top: 15),
+                        //   child: Row(
+                        //     children: <Widget>[
+                        //       Spacer(),
+                        //       Text("2 DAY TOURS:",
+                        //           textAlign: TextAlign.right,
+                        //           style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18, fontFamily: "SinkinSans")),
+                        //     ],
+                        //   ),
+                        // ),
+                        // getDescriptionRowText("Sunday August 23rd & Monday August 24th", fontSize: 12.0, italic: true),
+                        // getDescriptionRowText("Magical Easern Serbia"),
                       ],
                     )
                   ),
