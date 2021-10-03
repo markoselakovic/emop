@@ -1,11 +1,22 @@
+import 'package:emop/data/favorites.dart';
 import 'package:emop/models/agendaItem.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class AgendaListItem extends StatelessWidget {
+class AgendaListItem extends StatefulWidget {
   final AgendaItem item;
+  final Favorites favorites;
+  AgendaListItem(this.item, this.favorites);
 
-  AgendaListItem(this.item);
+  @override
+  _AgendaListItemState createState() => _AgendaListItemState();
+}
+
+class _AgendaListItemState extends State<AgendaListItem> {
+
+  // final AgendaItem _item;
+  // final Favorites _favorites;
+  // _AgendaListItemState(this._item, this._favorites);
 
   @override
   Widget build(BuildContext context) {
@@ -19,20 +30,20 @@ class AgendaListItem extends StatelessWidget {
               alignment: Alignment.centerLeft,
               child: Column(
                 children: <Widget>[
-                  Text(item.day,
+                  Text(widget.item.day,
                       style: TextStyle(
                           color: Colors.black,
                           fontSize: 15,
                           fontWeight: FontWeight.bold)),
-                  Text(item.date,
+                  Text(widget.item.date,
                       style: TextStyle(color: Colors.lime[600], fontSize: 13)),
-                  // Text(item.timeZone, style: TextStyle(color: Colors.blue, fontSize: 13, fontWeight: FontWeight.bold)),
-                  Text(item.time)
+                  Text(widget.item.time)
                 ],
               ),
             ),
           ),
-          getAgendaText(item),
+          getAgendaText(widget.item),
+          getFavoriteIcon(),
         ],
       ),
       Divider(
@@ -46,19 +57,35 @@ class AgendaListItem extends StatelessWidget {
     if (item.organizer != null) {
       return Expanded(
           child: Align(
-        alignment: Alignment.centerLeft,
-        child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-          Text(item.title, style: TextStyle(fontSize: 15)),
-          Text(item.organizer,
-              style: TextStyle(
-                fontSize: 13, color: Colors.grey
-              ))
-        ]),
-      ));
+            alignment: Alignment.centerLeft,
+            child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+              Text(item.title, style: TextStyle(fontSize: 15)),
+              Text(item.organizer,
+                  style: TextStyle(fontSize: 13, color: Colors.grey))
+            ]),
+          ));
     } else {
       return Expanded(child: Text(item.title, style: TextStyle(fontSize: 15)));
     }
+  }
+
+  Widget getFavoriteIcon() {
+    bool isFavorite = widget.favorites.isFavorite(widget.item.id);
+    return IconButton(
+        iconSize: 30.0,
+        icon: Padding(
+            padding: EdgeInsets.only(left: 4, right: 4, top: 0),
+            child: isFavorite
+                ? Icon(Icons.favorite)
+                : Icon(Icons.favorite_border_rounded)),
+        onPressed: () {
+          setState(() {
+            if (isFavorite) {
+              widget.favorites.removeFromFavorite(widget.item.id);
+            } else {
+              widget.favorites.addToFavorite(widget.item.id);
+            }
+          });
+        });
   }
 }
