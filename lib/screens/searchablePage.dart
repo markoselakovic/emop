@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:emop/data/favorites.dart';
 import 'package:flutter/material.dart';
 
 const String ALL_DAYS = "All days";
@@ -13,6 +14,8 @@ abstract class SearchablePageState<T extends StatefulWidget> extends State<T> {
 
   List items;
   List filteredItems;
+  Favorites favorites;
+  bool _isFavoritesActive = false;
   StreamSubscription itemsStreamSubscription;
 
   Widget getListView();
@@ -97,6 +100,19 @@ abstract class SearchablePageState<T extends StatefulWidget> extends State<T> {
             (searchQuery.isEmpty ||
                 item.title.toLowerCase().contains(searchQuery.toLowerCase())))
         .toList();
+    if (_isFavoritesActive) {
+      filteredItems = filteredItems.where((element) {
+        return favorites.isFavorite(element.id);
+      }).toList();
+    }
     filteredItems.sort((a, b) => a.order.compareTo(b.order));
+  }
+
+  void updateFavorites(bool isActive) {
+    setState(() {
+      _isFavoritesActive = isActive;
+      updateList();
+    });
+
   }
 }

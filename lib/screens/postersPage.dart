@@ -1,3 +1,4 @@
+import 'package:emop/data/favorites.dart';
 import 'package:emop/data/repository.dart';
 import 'package:emop/screens/searchablePage.dart';
 import 'package:emop/widgets/agendaListItem.dart';
@@ -15,6 +16,7 @@ class _PostersPageState extends SearchablePageState<PostersPage> {
   @override
   void initState() {
     items = Repository().getPosters();
+    favorites = Favorites('postersFavorites');
     Repository().getPostersStream();
     itemsStreamSubscription = Repository().getPostersStream().listen((event) {
       setState(() {
@@ -32,9 +34,7 @@ class _PostersPageState extends SearchablePageState<PostersPage> {
         itemCount: filteredItems.length,
         itemBuilder: (BuildContext context, int index) {
           return Center(
-              child: AgendaListItem(
-                filteredItems[index],
-              ));
+              child: AgendaListItem(filteredItems[index], favorites));
         });
   }
 }

@@ -2,7 +2,7 @@ import 'package:firebase_database/firebase_database.dart';
 
 class AgendaItem {
 
-  String id;
+  int id;
   String day;
   String date;
   String time;
@@ -14,7 +14,7 @@ class AgendaItem {
   AgendaItem(this.id,this.day, this.date, this.time, this.order, this.title, this.organizer);
 
   AgendaItem.fromMap(String key, Map map) {
-    id = key;
+    id = int.tryParse(key) ?? 0;
     date = map["date"];
     time = map["time"];
     order = map["order"];
@@ -23,7 +23,7 @@ class AgendaItem {
   }
 
   AgendaItem.fromSnapshot(DataSnapshot snapshot) :
-        id = snapshot.key,
+        id = int.tryParse(snapshot.key) ?? 0,
         date = snapshot.value["date"],
         day = snapshot.value["day"],
         time = snapshot.value['time'],
