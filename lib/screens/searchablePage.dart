@@ -96,7 +96,7 @@ abstract class SearchablePageState<T extends StatefulWidget> extends State<T> {
   void updateList() {
     filteredItems = items
         .where((item) =>
-            (dropdownValue == ALL_DAYS || item.day == dropdownValue) &&
+            (dropdownValue == ALL_DAYS || item.day.trim() == dropdownValue) &&
             (searchQuery.isEmpty ||
                 item.title.toLowerCase().contains(searchQuery.toLowerCase())))
         .toList();
