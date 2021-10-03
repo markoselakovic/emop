@@ -75,58 +75,61 @@ class _MyHomePageState extends State<MyHomePage> {
         // Add a ListView to the drawer. This ensures the user can scroll
         // through the options in the drawer if there isn't enough vertical
         // space to fit everything.
-        child: ListView(
-          // Important: Remove any padding from the ListView.
-          padding: EdgeInsets.zero,
-          children: <Widget>[
-            DrawerHeader(
-              child: Image.asset('assets/EMOPLogo.png'),
-              decoration: BoxDecoration(
-                color: Colors.lightGreen[600],
+        child: Expanded(
+          child: ListView(
+            // Important: Remove any padding from the ListView.
+            padding: EdgeInsets.zero,
+            shrinkWrap: true,
+            children: <Widget>[
+              DrawerHeader(
+                child: Image.asset('assets/EMOPLogo.png'),
+                decoration: BoxDecoration(
+                  color: Colors.lightGreen[600],
+                ),
               ),
-            ),
-            ListTile(
-              title: Text(VENUE_INFORMATION),
-              leading: Icon(Icons.info),
-              onTap: () {
-                Navigator.pop(context);
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => VenueInformation()),
-                );
-              },
-            ),
-            ListTile(
-              title: Text(AGENDA),
-              leading: Icon(Icons.format_list_bulleted),
-              onTap: () {
-                _selectedIndex = 1;
-                _onItemTapped(_selectedIndex);
-                Navigator.pop(context);
-                // ...
-              },
-            ),
-            // ListTile(
-            //   title: Text(POSTERS),
-            //   leading: Icon(Icons.assignment),
-            //   onTap: () {
-            //     _selectedIndex = 2;
-            //     _onItemTapped(_selectedIndex);
-            //     Navigator.pop(context);
-            //     // ...
-            //   },
-            // ),
-            ListTile(
-              title: Text(SOCIAL),
-              leading: Icon(CupertinoIcons.conversation_bubble),
-              onTap: () {
-                _selectedIndex = 2; //todo put 3 when posters are back
-                _onItemTapped(_selectedIndex);
-                Navigator.pop(context);
-                // ...
-              },
-            ),
-          ],
+              ListTile(
+                title: Text(VENUE_INFORMATION),
+                leading: Icon(Icons.info),
+                onTap: () {
+                  Navigator.pop(context);
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => VenueInformation()),
+                  );
+                },
+              ),
+              ListTile(
+                title: Text(AGENDA),
+                leading: Icon(Icons.format_list_bulleted),
+                onTap: () {
+                  _selectedIndex = 1;
+                  _onItemTapped(_selectedIndex);
+                  Navigator.pop(context);
+                  // ...
+                },
+              ),
+              // ListTile(
+              //   title: Text(POSTERS),
+              //   leading: Icon(Icons.assignment),
+              //   onTap: () {
+              //     _selectedIndex = 2;
+              //     _onItemTapped(_selectedIndex);
+              //     Navigator.pop(context);
+              //     // ...
+              //   },
+              // ),
+              ListTile(
+                title: Text(SOCIAL),
+                leading: Icon(CupertinoIcons.conversation_bubble),
+                onTap: () {
+                  _selectedIndex = 2; //todo put 3 when posters are back
+                  _onItemTapped(_selectedIndex);
+                  Navigator.pop(context);
+                  // ...
+                },
+              ),
+            ],
+          ),
         ),
       ),
       appBar: AppBar(

@@ -31,6 +31,7 @@ class _PostersPageState extends SearchablePageState<PostersPage> {
   Widget getListView() {
     return ListView.builder(
         padding: const EdgeInsets.all(8),
+        shrinkWrap: true,
         itemCount: filteredItems.length,
         itemBuilder: (BuildContext context, int index) {
           return Center(

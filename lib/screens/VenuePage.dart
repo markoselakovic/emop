@@ -6,7 +6,7 @@ class VenueInformation extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: DefaultTabController(
-        length: 3,
+        length: 2,
         child: Scaffold(
           appBar: AppBar(
             backgroundColor: Colors.lightGreen[600],
@@ -14,7 +14,7 @@ class VenueInformation extends StatelessWidget {
               tabs: [
                 Tab(text: "INFO"),
                 Tab(text: "FLOOR PLAN"),
-                Tab(text: "AREA"),
+                // Tab(text: "AREA"),
               ],
             ),
             title: Text('Venue information'),
@@ -22,8 +22,8 @@ class VenueInformation extends StatelessWidget {
           body: TabBarView(
             children: [
               getInfo(context),
-              Image.asset('assets/EMOP2.jpeg'),
-              Image.asset('assets/EMOP1.jpeg'),
+              Image.asset('assets/floorplan.jpeg'),
+              // Image.asset('assets/EMOP1.jpeg'),
             ],
           ),
         ),

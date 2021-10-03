@@ -158,11 +158,11 @@ class SocialPage extends StatelessWidget {
                             ],
                           ),
                         ),
-                        getDescriptionRowText("Monday October 11th", fontSize: 12.0, italic: true),
+                        getDescriptionRowText("Monday October 11th", fontSize: 14.0, italic: true),
                         getDescriptionRowText("Vojvodina Tour"),
-                        getDescriptionRowText("Tuesday October 12th", fontSize: 12.0, italic: true),
+                        getDescriptionRowText("Tuesday October 12th", fontSize: 14.0, italic: true),
                         getDescriptionRowText("Explore Belgrade"),
-                        getDescriptionRowText("Sunday October 17th", fontSize: 12.0, italic: true),
+                        getDescriptionRowText("Sunday October 17th", fontSize: 14.0, italic: true),
                         getDescriptionRowText("The Ilic-Nijemčevic Winery"),
                         // Padding(
                         //   padding: const EdgeInsets.only(bottom: 2.0, top: 15),
@@ -190,15 +190,18 @@ class SocialPage extends StatelessWidget {
   }
 
 
-  Widget getDescriptionRowText(String text, {double fontSize = 13.0, bool italic = false}) {
-    return Row(
-      children: <Widget>[
-        Spacer(),
-        Text(text,
-            textAlign: TextAlign.right,
-            softWrap: false,
-            style: TextStyle(fontSize: fontSize, fontFamily: "SinkinSans", fontStyle: italic ? FontStyle.italic:  FontStyle.normal)),
-      ],
+  Widget getDescriptionRowText(String text, {double fontSize = 15.0, bool italic = false}) {
+    return Padding(
+      padding: const EdgeInsets.only(bottom:8.0),
+      child: Row(
+        children: <Widget>[
+          Spacer(),
+          Text(text,
+              textAlign: TextAlign.right,
+              softWrap: false,
+              style: TextStyle(fontSize: fontSize, fontFamily: "SinkinSans", fontStyle: italic ? FontStyle.italic:  FontStyle.normal)),
+        ],
+      ),
     );
   }
 

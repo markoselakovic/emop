@@ -6,10 +6,10 @@ import 'package:flutter/material.dart';
 
 class AgendaPage extends StatefulWidget {
 
-  final _AgendaPageState state = _AgendaPageState();
+  _AgendaPageState state = _AgendaPageState();
 
   @override
-  _AgendaPageState createState() => state;
+  _AgendaPageState createState() => state = _AgendaPageState();
 
   void updateFavoritesState(bool isActive) {
     state.updateFavorites(isActive);
@@ -34,6 +34,7 @@ class _AgendaPageState extends SearchablePageState {
   @override
   Widget getListView() {
     return ListView.builder(
+        shrinkWrap: true,
         padding: const EdgeInsets.all(8),
         itemCount: filteredItems.length,
         itemBuilder: (BuildContext context, int index) {
