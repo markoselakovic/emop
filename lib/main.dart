@@ -2,8 +2,11 @@ import 'package:emop/data/repository.dart';
 import 'package:emop/screens/AgendaPage.dart';
 import 'package:emop/screens/VenuePage.dart';
 import 'package:emop/screens/postersPage.dart';
+import 'package:emop/screens/recomendedRestaurants.dart';
 import 'package:emop/screens/socialPage.dart';
+import 'package:emop/screens/sponsorsPage.dart';
 import 'package:emop/util/shared_preferences.dart';
+import 'package:emop/util/utils.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -45,6 +48,10 @@ class _MyHomePageState extends State<MyHomePage> {
   static const String POSTERS = "Posters";
   static const String SOCIAL = "Social";
   static const String VENUE_INFORMATION = "Venue information";
+  static const String SPONSORS = "Sponsors";
+  static const String RESTAURANTS = "Recommended restaurants";
+  static const String EMOP = "EMOP 2021";
+  static const String VIRTUAL_PLATFORM = "Virtual platform";
 
   _MyHomePageState() {
     _agendaPage = AgendaPage();
@@ -127,6 +134,44 @@ class _MyHomePageState extends State<MyHomePage> {
                   _onItemTapped(_selectedIndex);
                   Navigator.pop(context);
                   // ...
+                },
+              ),
+              ListTile(
+                title: Text(SPONSORS),
+                leading: Icon(Icons.emoji_events),
+                onTap: () {
+                  Navigator.pop(context);
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => SponsorsPage()),
+                  );
+                },
+              ),
+              ListTile(
+                title: Text(RESTAURANTS),
+                leading: Icon(Icons.home),
+                onTap: () {
+                  Navigator.pop(context);
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => RecommendedRestaurants()),
+                  );
+                },
+              ),
+              ListTile(
+                title: Text(EMOP),
+                leading: Icon(Icons.open_in_browser),
+                onTap: () {
+                  Navigator.pop(context);
+                  launchURL('https://emop2020.org/');
+                },
+              ),
+              ListTile(
+                title: Text(VIRTUAL_PLATFORM),
+                leading: Icon(Icons.touch_app),
+                onTap: () {
+                  Navigator.pop(context);
+                  launchURL('https://emop2020.org/accessing-the-virtual-platform/');
                 },
               ),
             ],
