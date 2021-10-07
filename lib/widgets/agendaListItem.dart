@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 class AgendaListItem extends StatefulWidget {
   final AgendaItem item;
   final Favorites favorites;
-  AgendaListItem(this.item, this.favorites);
+  AgendaListItem(this.item, this.favorites, {Key key}) :super(key: key);
 
   @override
   _AgendaListItemState createState() => _AgendaListItemState();

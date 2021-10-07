@@ -39,7 +39,7 @@ class _AgendaPageState extends SearchablePageState {
         itemCount: filteredItems.length,
         itemBuilder: (BuildContext context, int index) {
           return Center(
-              child: new AgendaListItem(filteredItems[index], favorites));
+              child: new AgendaListItem(filteredItems[index], favorites), key: UniqueKey(),);
         });
   }
 }
