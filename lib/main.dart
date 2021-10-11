@@ -49,9 +49,10 @@ class _MyHomePageState extends State<MyHomePage> {
   static const String SOCIAL = "Social";
   static const String VENUE_INFORMATION = "Venue information";
   static const String SPONSORS = "Sponsors";
-  static const String RESTAURANTS = "Recommended restaurants";
+  static const String RESTAURANTS = "Restaurants";
   static const String EMOP = "EMOP 2021";
   static const String VIRTUAL_PLATFORM = "Virtual platform";
+  static const String BEST_PAPER_AWARD = "Best paper award";
 
   _MyHomePageState() {
     _agendaPage = AgendaPage();
@@ -159,6 +160,14 @@ class _MyHomePageState extends State<MyHomePage> {
                 },
               ),
               ListTile(
+                title: Text(POSTERS),
+                leading: Icon(Icons.article),
+                onTap: () {
+                  Navigator.pop(context);
+                  launchURL('https://emop2020.org/wp-content/uploads/2021/10/Final-List-of-Poster-Presentations.pdf');
+                },
+              ),
+              ListTile(
                 title: Text(EMOP),
                 leading: Icon(Icons.open_in_browser),
                 onTap: () {
@@ -172,6 +181,14 @@ class _MyHomePageState extends State<MyHomePage> {
                 onTap: () {
                   Navigator.pop(context);
                   launchURL('https://emop2020.org/accessing-the-virtual-platform/');
+                },
+              ),
+              ListTile(
+                title: Text(BEST_PAPER_AWARD),
+                leading: Icon(Icons.star),
+                onTap: () {
+                  Navigator.pop(context);
+                  launchURL('https://emop2020.org/best-paper-award/');
                 },
               ),
             ],
