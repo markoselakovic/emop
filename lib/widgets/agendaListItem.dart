@@ -38,7 +38,7 @@ class _AgendaListItemState extends State<AgendaListItem> {
                   Text(widget.item.date,
                       style: TextStyle(color: Colors.lime[600], fontSize: 13)),
                   Text(widget.item.time),
-                  Text(widget.item.r),
+                  Text(widget.item.room),
                 ],
               ),
             ),

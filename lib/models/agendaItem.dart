@@ -7,17 +7,19 @@ class AgendaItem {
   String date;
   String time;
   String order;
+  String room;
 
   String title;
   String organizer;
 
-  AgendaItem(this.id,this.day, this.date, this.time, this.order, this.title, this.organizer);
+  AgendaItem(this.id,this.day, this.date, this.time, this.order, this.room, this.title, this.organizer);
 
   AgendaItem.fromMap(String key, Map map) {
     id = int.tryParse(key) ?? 0;
     date = map["date"];
     time = map["time"];
     order = map["order"];
+    room = map["room"];
     title = map["title"];
     organizer = map["organizer"];
   }
@@ -28,6 +30,7 @@ class AgendaItem {
         day = snapshot.value["day"],
         time = snapshot.value['time'],
         order = snapshot.value['order'],
+        room = snapshot.value['room'],
         title = snapshot.value['title'],
         organizer = snapshot.value["organizer"];
 
@@ -36,6 +39,7 @@ class AgendaItem {
       'date': date,
       'day': day,
       'time': time,
+      'room': room,
       'order': order,
       'title': title,
       'organizer' : organizer
