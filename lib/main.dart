@@ -139,7 +139,7 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
               ListTile(
                 title: Text(SPONSORS),
-                leading: Icon(Icons.emoji_events),
+                leading: Icon(Icons.star),
                 onTap: () {
                   Navigator.pop(context);
                   Navigator.push(
@@ -185,7 +185,7 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
               ListTile(
                 title: Text(BEST_PAPER_AWARD),
-                leading: Icon(Icons.star),
+                leading: Icon(Icons.emoji_events),
                 onTap: () {
                   Navigator.pop(context);
                   launchURL('https://emop2020.org/best-paper-award/');
